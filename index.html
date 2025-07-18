@@ -2,159 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dharani Paka | DevOps Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
   <style>
-    /* ThemeWagon exact styling */
-    @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
-    html { scroll-behavior: smooth; }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body, html { height:100%; font-family:'Poppins', sans-serif; }
-    body {
-      background: url('https://themewagon.github.io/personalportfolio/img/bg.jpg') no-repeat center/cover fixed;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    .overlay {
-      position:absolute; top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.6);
-      z-index: 0;
-    }
-    header {
-      position: relative; z-index:1;
-      height:100vh; display:flex;
-      flex-direction: column; align-items:center; justify-content:center;
-      text-align:center;
-      animation: fadeInDown 1s ease-out;
-    }
-    header h1 { font-size:3.5rem; font-weight:600; color:#00FFFF; }
-    header h2 { font-size:1.5rem; font-weight:300; color:#ddd; margin-top:10px; }
-
-    .btn-group { margin-top:30px; animation: fadeInUp 1s ease-out; }
-    .btn {
-      display:inline-block; margin:0 8px; padding:12px 28px;
-      border:2px solid #00FFFF; color:#00FFFF;
-      text-decoration:none; font-weight:500;
-      border-radius:4px; transition: all .3s ease;
-    }
-    .btn:hover { background:#00FFFF; color:#111; }
-
-    main {
-      position: relative; z-index:1;
-      max-width:800px; margin:60px auto;
-      background:rgba(28,28,28,0.9);
-      padding:40px; border-left:4px solid #00FFFF;
-    }
-    section { margin-bottom:40px; animation: fadeIn 1s ease-out both; }
-    h3 {
-      color:#00FFFF; font-size:1.6rem;
-      border-bottom:1px solid #00FFFF; padding-bottom:6px;
-      margin-bottom:12px;
-    }
-    p, ul { margin:12px 0; line-height:1.6; }
-    ul { margin-left:20px; }
-
-    footer {
-      text-align:center; color:#aaa; padding:20px 0;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity:0; transform: translateY(-20px); }
-      to { opacity:1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity:0; transform: translateY(20px); }
-      to { opacity:1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity:0; }
-      to { opacity:1; }
-    }
-
-    /* Responsive */
-    @media(max-width:600px) {
-      header h1 { font-size:2.5rem; }
-      .btn { margin:6px 4px; padding:10px 20px; }
-      main { padding:20px; }
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+    body, html {height: 100%; font-family: 'Poppins', sans-serif; background: url('https://themewagon.github.io/personalportfolio/img/bg.jpg') no-repeat center center fixed; background-size: cover; color: #fff; overflow-x: hidden;}
+    .overlay {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 0;}
+    header, section, footer {position: relative; z-index: 1; padding: 60px 20px; max-width: 1200px; margin: auto;}
+    nav {position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; z-index: 10;}
+    nav a {color: #00FFFF; text-decoration: none; padding: 20px; font-weight: 500; transition: 0.3s;}
+    nav a:hover {color: #fff;}
+    header {text-align: center; padding-top: 120px;}
+    header h1 {font-size: 3.5rem; color: #00FFFF;}
+    header h2 {font-size: 1.5rem; color: #ccc; margin-top: 10px;}
+    .btn {display: inline-block; margin: 10px; padding: 12px 24px; border: 2px solid #00FFFF; color: #00FFFF; border-radius: 4px; text-decoration: none; transition: .3s;}
+    .btn:hover {background: #00FFFF; color: #111;}
+    .profile-img {border-radius: 50%; width: 180px; border: 4px solid #00FFFF; margin: 20px auto; display: block;}
+    section h2 {color: #00FFFF; font-size: 2rem; margin-bottom: 20px; border-bottom: 2px solid #00FFFF; display: inline-block;}
+    .skills {display: flex; flex-wrap: wrap; gap: 20px;}
+    .skill {flex: 1 1 40%;}
+    .bar {background: #222; height: 10px; border-radius: 5px; overflow: hidden; margin: 5px 0 20px;}
+    .bar-fill {height: 10px; background: #00FFFF; width: 0%; animation: fill 2s forwards;}
+    @keyframes fill {to {width: var(--width);}}
+    .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .card {background: rgba(0,0,0,0.6); padding: 20px; border-left: 4px solid #00FFFF;}
+    footer {text-align: center; font-size: 0.9rem; color: #aaa; padding-bottom: 40px;}
+    form input, form textarea {width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 4px; background: #333; color: #fff;}
+    form button {padding: 10px 20px; background: #00FFFF; border: none; color: #000; font-weight: bold; border-radius: 4px; cursor: pointer;}
   </style>
 </head>
 <body>
   <div class="overlay"></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <header>
+  <header id="home">
+    <img src="https://via.placeholder.com/180" alt="Profile" class="profile-img">
     <h1>Dharani Paka</h1>
     <h2>Cloud Infrastructure & DevOps Engineer</h2>
-    <div class="btn-group">
-      <a href="YOUR_RESUME_LINK.pdf" class="btn" download>Download Resume</a>
-      <a href="https://linkedin.com/in/YOUR" class="btn" target="_blank">LinkedIn</a>
-      <a href="https://github.com/YOUR" class="btn" target="_blank">GitHub</a>
-    </div>
+    <a class="btn" href="#contact">Hire Me</a>
+    <a class="btn" href="YOUR_RESUME_LINK.pdf" download>Download Resume</a>
   </header>
 
-  <main>
-    <!-- Sections -->
-    <section>
-      <h3>Professional Summary</h3>
-      <p>Cloud Infrastructure & DevOps Engineer with a Master’s in IT and 3+ years of experience building scalable, automated apps on AWS. Skilled in Terraform, CI/CD, Docker, Kubernetes, and cloud-native tools to deliver high-availability systems.</p>
-    </section>
-    <section>
-      <h3>Skills</h3>
-      <ul>
-        <li><strong>Cloud & IaC:</strong> AWS, Terraform, CloudFormation, Control-M</li>
-        <li><strong>CI/CD:</strong> GitHub Actions, Jenkins, CodePipeline</li>
-        <li><strong>Programming:</strong> Python, Java, Shell</li>
-        <li><strong>Containers:</strong> Docker, Kubernetes (Helm)</li>
-        <li><strong>Monitoring:</strong> Prometheus, Grafana</li>
-        <li><strong>Databases:</strong> Redshift, MySQL, PostgreSQL</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Experience</h3>
-      <div><strong>University of North Texas</strong> — <em>Student Assistant (Jan 2024 – May 2025)</em>
-        <ul>
-          <li>Mentored students on AWS Lambda, API Gateway & S3.</li>
-          <li>Assisted in CI/CD pipelines, Linux networking, version control setups.</li>
-        </ul>
-      </div>
-      <div><strong>Capgemini</strong> — <em>Senior Analyst / Software Engineer (Jul 2021 – Jul 2023)</em>
-        <ul>
-          <li>Automated infra with Terraform & Ansible; managed EC2, S3, VPC.</li>
-          <li>Built Jenkins CI/CD pipelines; reduced deployment time from 3 hrs to 10 min.</li>
-          <li>Containerized services on Docker & EKS; monitored via Prometheus/Grafana.</li>
-          <li>Optimized SQL in Redshift; managed Control‑M ETL jobs.</li>
-        </ul>
-      </div>
-    </section>
-    <section>
-      <h3>Projects</h3>
-      <div><strong>Kubernetes Deployment Automation with Argo CD</strong><p>CI/CD pipeline for Node.js using Docker, Jenkins, GitOps & ArgoCD.</p></div>
-      <div><strong>Terraform AWS Provisioning</strong><p>Automated EC2, VPC & S3 provisioning via Terraform.</p></div>
-      <div><strong>3‑Tier Web Architecture</strong><p>High‑availability AWS app with Route53, LB, EC2, NAT Gateway.</p></div>
-    </section>
-    <section>
-      <h3>Education</h3>
-      <p><strong>University of North Texas</strong> — MS in Information Systems & Technology (Aug 2023 – May 2025)<br><em>GPA:3.7/4.0 | Coursework: Data Warehousing, BI</em></p>
-    </section>
-    <section>
-      <h3>Certifications</h3>
-      <ul>
-        <li>Microsoft Certified: Azure Fundamentals (AZ‑900)</li>
-        <li>AWS Educate: Cloud 101 & Operations</li>
-        <li>CCNA Routing and Switching</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Leadership</h3>
-      <p><strong>Vice President, ITDS Cyber Security Club</strong> (May 2024 – May 2025)</p>
-      <ul>
-        <li>Increased membership by 40% through targeted campaigns.</li>
-        <li>Coordinated “Cyber October” event series with 500+ attendees.</li>
-      </ul>
-    </section>
-  </main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Cloud & DevOps Engineer with 3+ years of experience in AWS, Terraform, CI/CD pipelines, and Kubernetes. Passionate about building scalable, resilient infrastructure and automation-driven workflows.</p>
+  </section>
 
-  <footer>&copy; 2025 Dharani Paka. All rights reserved.</footer>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <p>AWS</p><div class="bar"><div class="bar-fill" style="--width:90%"></div></div>
+        <p>Terraform</p><div class="bar"><div class="bar-fill" style="--width:85%"></div></div>
+        <p>Docker/Kubernetes</p><div class="bar"><div class="bar-fill" style="--width:80%"></div></div>
+      </div>
+      <div class="skill">
+        <p>Python</p><div class="bar"><div class="bar-fill" style="--width:75%"></div></div>
+        <p>Jenkins</p><div class="bar"><div class="bar-fill" style="--width:85%"></div></div>
+        <p>Prometheus/Grafana</p><div class="bar"><div class="bar-fill" style="--width:70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>ArgoCD + Kubernetes</h3>
+        <p>CI/CD pipeline using Jenkins, ArgoCD, and GitOps for Node.js apps.</p>
+      </div>
+      <div class="card">
+        <h3>Terraform AWS Setup</h3>
+        <p>Provisioned AWS EC2, VPC, S3 with repeatable Terraform templates.</p>
+      </div>
+      <div class="card">
+        <h3>3-Tier Web Architecture</h3>
+        <p>Deployed scalable app using AWS Route53, Load Balancer, EC2, and NAT.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Cloud Infrastructure</h3>
+        <p>Design & provision of AWS architectures using Terraform and CloudFormation.</p>
+      </div>
+      <div class="card">
+        <h3>CI/CD Pipelines</h3>
+        <p>Build secure pipelines using Jenkins, GitHub Actions, CodePipeline.</p>
+      </div>
+      <div class="card">
+        <h3>Monitoring & Automation</h3>
+        <p>Automated performance and alerting setup using Prometheus & Grafana.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="#" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Dharani Paka. All rights reserved.
+  </footer>
 </body>
 </html>
