@@ -5,162 +5,115 @@
   <title>Dharani Paka | DevOps Engineer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Open Sans', sans-serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+    body, html { width: 100%; height: 100%; }
     body {
-      background: #0f0f0f;
+      background: url('https://themewagon.github.io/personalportfolio/img/bg.jpg') center/cover no-repeat fixed;
       color: #fff;
       line-height: 1.6;
-      padding: 20px;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.7);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      z-index: -1;
     }
     header {
+      position: relative;
       text-align: center;
-      padding: 40px 0;
+      padding: 120px 20px 60px;
     }
-    header h1 {
-      font-size: 3em;
-      color: #00ffff;
+    header h1 { font-size: 3.5rem; font-weight: 600; color: #00ffff; }
+    header h2 { font-weight: 300; color: #ddd; margin-top: 10px; }
+
+    .btn-group {
+      margin: 30px 0;
     }
-    header h2 {
-      font-weight: 400;
-      color: #999;
-    }
-    section {
-      margin: 50px auto;
-      max-width: 900px;
-      padding: 20px;
-      border-left: 4px solid #00ffff;
-      background: #1c1c1c;
-    }
-    h3 {
-      margin-bottom: 10px;
-      color: #00ffff;
-      border-bottom: 1px solid #00ffff;
-      padding-bottom: 5px;
-    }
-    ul, p {
-      margin-left: 20px;
-    }
-    .contact {
-      text-align: center;
-      margin: 30px auto;
-    }
-    .contact a {
+    .btn {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 14px 28px;
+      border: 2px solid #00ffff;
       color: #00ffff;
       text-decoration: none;
-      margin: 0 10px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background .3s, color .3s;
     }
-    .project, .exp {
-      margin-bottom: 20px;
+    .btn:hover {
+      background: #00ffff;
+      color: #111;
     }
+
+    main {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      background: rgba(28,28,28,0.85);
+      padding: 40px;
+      border-left: 4px solid #00ffff;
+    }
+    h3 {
+      color: #00ffff;
+      margin-bottom: 12px;
+      font-size: 1.6rem;
+      border-bottom: 1px solid #00ffff;
+      padding-bottom: 6px;
+    }
+    p, ul { margin: 12px 0; }
+    ul { margin-left: 20px; }
+    strong { color: #fff; }
+
     footer {
       text-align: center;
-      font-size: 0.9em;
-      margin-top: 50px;
-      color: #555;
+      padding: 20px 0;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.5rem; }
+      .btn { margin: 10px 5px; padding: 12px 20px; }
+      main { padding: 20px; }
     }
   </style>
 </head>
 <body>
+  <div class="overlay"></div>
 
-<header>
-  <h1>Dharani Paka</h1>
-  <h2>Cloud Infrastructure & DevOps Engineer</h2>
-  <div class="contact">
-    <p>📞 +1-940-344-3934 | 📧 dharani12paka@gmail.com</p>
-    <p>
-      <a href="#">LinkedIn</a> |
-      <a href="#">GitHub</a>
-    </p>
-  </div>
-</header>
+  <header>
+    <h1>Dharani Paka</h1>
+    <h2>Cloud Infrastructure & DevOps Engineer</h2>
+    <div class="btn-group">
+      <a href="YOUR_RESUME_LINK.pdf" class="btn" download>Download Resume</a>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" class="btn" target="_blank">LinkedIn</a>
+      <a href="https://github.com/YOUR_GITHUB" class="btn" target="_blank">GitHub</a>
+    </div>
+  </header>
 
-<section>
-  <h3>Professional Summary</h3>
-  <p>Cloud Infrastructure & DevOps Engineer with a Master’s in IT and 3+ years of experience building scalable, automated apps on AWS. Skilled in Terraform, CI/CD, Docker, Kubernetes, and cloud-native tools to deliver high-availability systems.</p>
-</section>
+  <main>
+    <section>
+      <h3>Professional Summary</h3>
+      <p>Cloud Infrastructure & DevOps Engineer with a Master’s in IT and 3+ years of experience building scalable, automated apps on AWS. Skilled in Terraform, CI/CD, Docker, Kubernetes, and cloud-native tools to deliver high-availability systems.</p>
+    </section>
 
-<section>
-  <h3>Skills</h3>
-  <ul>
-    <li><strong>Cloud & IaC:</strong> AWS (EC2, S3, Lambda, ECS), Terraform, CloudFormation, Control-M</li>
-    <li><strong>CI/CD & DevOps:</strong> GitHub Actions, Jenkins, CodePipeline, Git/GitLab</li>
-    <li><strong>Programming:</strong> Python, Java, Shell</li>
-    <li><strong>Containers & Monitoring:</strong> Docker, Kubernetes (Helm), Prometheus, Grafana</li>
-    <li><strong>Database:</strong> Redshift, MySQL, PostgreSQL, SQL Tuning</li>
-    <li><strong>QA & Testing:</strong> Spydr, Unit & Integration Testing, Regression Testing</li>
-  </ul>
-</section>
+    <section>
+      <h3>Skills</h3>
+      <ul>
+        <li><strong>Cloud & IaC:</strong> AWS (EC2, S3, Lambda, ECS), Terraform, CloudFormation, Control‑M</li>
+        <li><strong>CI/CD & DevOps:</strong> GitHub Actions, Jenkins, CodePipeline, Git/GitLab</li>
+        <li><strong>Programming:</strong> Python, Java, Shell</li>
+        <li><strong>Containers & Monitoring:</strong> Docker, Kubernetes (Helm), Prometheus, Grafana</li>
+        <li><strong>Database:</strong> Redshift, MySQL, PostgreSQL, SQL Tuning</li>
+        <li><strong>QA & Testing:</strong> Spydr, Unit & Integration Testing, Regression Testing</li>
+      </ul>
+    </section>
 
-<section>
-  <h3>Experience</h3>
-  <div class="exp">
-    <strong>University of North Texas</strong> — <em>Student Assistant (Jan 2024 – May 2025)</em>
-    <ul>
-      <li>Mentored students on AWS Lambda, API Gateway & S3 serverless web apps.</li>
-      <li>Assisted in CI/CD pipelines, Linux networking, and version control setups.</li>
-    </ul>
-  </div>
-  <div class="exp">
-    <strong>Capgemini</strong> — <em>Senior Analyst/Software Engineer (Jul 2021 – Jul 2023)</em>
-    <ul>
-      <li>Automated infrastructure with Terraform and Ansible; versioned EC2s, S3s, and VPCs.</li>
-      <li>Built Jenkins CI/CD pipelines reducing deployment time from 3hrs to 10min.</li>
-      <li>Containerized services with Docker & deployed to EKS; monitored via Prometheus/Grafana.</li>
-      <li>Led SQL optimization in Redshift and managed Control-M scheduled ETL jobs.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h3>Projects</h3>
-  <div class="project">
-    <strong>Kubernetes Deployment Automation with Argo CD</strong>
-    <p>Implemented CI/CD for Node.js app using Docker, Jenkins, GitOps & ArgoCD.</p>
-  </div>
-  <div class="project">
-    <strong>Terraform AWS Provisioning</strong>
-    <p>Automated EC2, VPC, and S3 setup using Terraform for repeatable deployments.</p>
-  </div>
-  <div class="project">
-    <strong>3-Tier Web Architecture</strong>
-    <p>Built high-availability AWS app with Route53, Load Balancers, EC2, and NAT Gateway.</p>
-  </div>
-</section>
-
-<section>
-  <h3>Education</h3>
-  <p><strong>University of North Texas</strong> — MS in Information Systems and Technology (Aug 2023 – May 2025)</p>
-  <p><em>GPA: 3.7/4.0 | Relevant Coursework: Data Warehousing, Business Intelligence</em></p>
-</section>
-
-<section>
-  <h3>Certifications</h3>
-  <ul>
-    <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-    <li>AWS Educate: Introduction to Cloud 101</li>
-    <li>AWS Educate: Getting Started with Cloud Operations</li>
-    <li>CCNA Routing and Switching</li>
-  </ul>
-</section>
-
-<section>
-  <h3>Leadership</h3>
-  <p><strong>Vice President, ITDS Cyber Security Club</strong> (May 2024 – May 2025)</p>
-  <ul>
-    <li>Grew club membership by 40% through personalized outreach campaigns.</li>
-    <li>Coordinated Cyber October event series attended by 500+ students and speakers.</li>
-  </ul>
-</section>
-
-<footer>
-  &copy; 2025 Dharani Paka. All rights reserved.
-</footer>
-
-</body>
-</html>
+    <section>
+      <h3>Experience</h3>
+      <div>
+        <strong>University of North Texas</strong> — <em>Student Assistant (Jan 2024 – May 2025)</em>
+        <ul>
+         
