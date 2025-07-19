@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dharani Paka | DevOps Engineer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -20,19 +21,43 @@
       z-index: -1;
     }
     .navbar-brand, .nav-link, h1, h2, h3 { color: #00FFFF !important; }
-    .btn-outline-info:hover { background-color: #00FFFF; color: #000; }
-    .section { padding: 80px 0; background: rgba(0,0,0,0.75); }
-    .profile-img { width: 180px; border-radius: 50%; border: 4px solid #00FFFF; }
-    .card { background-color: rgba(0,0,0,0.6); border: none; color: #fff; }
-    .progress-bar { background-color: #00FFFF; }
+    .btn-outline-info:hover, .btn-info {
+      background-color: #00FFFF; color: #000;
+    }
+    .section {
+      padding: 100px 0;
+      background: rgba(0,0,0,0.75);
+    }
+    .profile-img {
+      width: 180px;
+      border-radius: 50%;
+      border: 4px solid #00FFFF;
+    }
+    .card {
+      background-color: rgba(0,0,0,0.6);
+      border: none;
+      color: #fff;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0,255,255,0.4);
+    }
+    .progress-bar {
+      background-color: #00FFFF;
+    }
+    .icon-box i {
+      font-size: 2rem;
+      color: #00FFFF;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
     <div class="container">
-      <a class="navbar-brand" href="#home">Dharani</a>
+      <a class="navbar-brand fw-bold" href="#home"><i class="fas fa-terminal me-2"></i>Dharani</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,39 +74,33 @@
   </nav>
 
   <header id="home" class="text-center text-white py-5">
-    <img src="dharani.PNG" alt="Profile" class="profile-img mb-3">
-    <h1>Dharani P</h1>
-    <h2>Cloud Infrastructure & DevOps Engineer</h2>
-    <a href="#contact" class="btn btn-outline-info mt-3">Hire Me</a>
-    <a href="YOUR_RESUME_LINK.pdf" class="btn btn-outline-info mt-3" download>Download Resume</a>
+    <img src="dharani.PNG" alt="Profile" class="profile-img mb-4">
+    <h1 class="display-4 fw-bold">Dharani Paka</h1>
+    <h2 class="fs-4">Cloud Infrastructure & DevOps Engineer</h2>
+    <a href="#contact" class="btn btn-outline-info mt-4 me-2">Hire Me</a>
+    <a href="YOUR_RESUME_LINK.pdf" class="btn btn-outline-info mt-4" download>Download Resume</a>
   </header>
 
   <section id="about" class="section text-center">
     <div class="container">
-      <h2>About Me</h2>
-      <p>Cloud & DevOps Engineer with 3+ years of experience in AWS, Terraform, CI/CD pipelines, and Kubernetes. Passionate about building scalable, resilient infrastructure and automation-driven workflows.</p>
+      <h2 class="mb-4">About Me</h2>
+      <p class="lead">Cloud & DevOps Engineer with 3+ years of experience in AWS, Terraform, CI/CD pipelines, and Kubernetes. Passionate about building scalable, resilient infrastructure and automation-driven workflows.</p>
     </div>
   </section>
 
   <section id="skills" class="section">
     <div class="container">
-      <h2 class="text-center">Skills</h2>
+      <h2 class="text-center mb-5">Skills</h2>
       <div class="row">
         <div class="col-md-6">
-          <p>AWS</p>
-          <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
-          <p>Terraform</p>
-          <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-          <p>Docker/Kubernetes</p>
-          <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+          <p>AWS</p><div class="progress mb-3"><div class="progress-bar" style="width:90%">90%</div></div>
+          <p>Terraform</p><div class="progress mb-3"><div class="progress-bar" style="width:85%">85%</div></div>
+          <p>Docker/Kubernetes</p><div class="progress mb-3"><div class="progress-bar" style="width:80%">80%</div></div>
         </div>
         <div class="col-md-6">
-          <p>Python</p>
-          <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
-          <p>Jenkins</p>
-          <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-          <p>Prometheus/Grafana</p>
-          <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+          <p>Python</p><div class="progress mb-3"><div class="progress-bar" style="width:75%">75%</div></div>
+          <p>Jenkins</p><div class="progress mb-3"><div class="progress-bar" style="width:85%">85%</div></div>
+          <p>Prometheus/Grafana</p><div class="progress mb-3"><div class="progress-bar" style="width:70%">70%</div></div>
         </div>
       </div>
     </div>
@@ -89,22 +108,22 @@
 
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="text-center">Projects</h2>
+      <h2 class="text-center mb-5">Projects</h2>
       <div class="row">
         <div class="col-md-4">
-          <div class="card p-3 mb-4">
+          <div class="card p-4 mb-4">
             <h5>ArgoCD + Kubernetes</h5>
             <p>CI/CD pipeline using Jenkins, ArgoCD, and GitOps for Node.js apps.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 mb-4">
+          <div class="card p-4 mb-4">
             <h5>Terraform AWS Setup</h5>
             <p>Provisioned AWS EC2, VPC, S3 with repeatable Terraform templates.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 mb-4">
+          <div class="card p-4 mb-4">
             <h5>3-Tier Web Architecture</h5>
             <p>Deployed scalable app using AWS Route53, Load Balancer, EC2, and NAT.</p>
           </div>
@@ -115,22 +134,25 @@
 
   <section id="services" class="section">
     <div class="container">
-      <h2 class="text-center">Services</h2>
+      <h2 class="text-center mb-5">Services</h2>
       <div class="row">
         <div class="col-md-4">
-          <div class="card p-3 mb-4">
+          <div class="card text-center p-4 mb-4">
+            <div class="icon-box"><i class="fas fa-cloud"></i></div>
             <h5>Cloud Infrastructure</h5>
             <p>Design & provision of AWS architectures using Terraform and CloudFormation.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 mb-4">
+          <div class="card text-center p-4 mb-4">
+            <div class="icon-box"><i class="fas fa-code-branch"></i></div>
             <h5>CI/CD Pipelines</h5>
             <p>Build secure pipelines using Jenkins, GitHub Actions, CodePipeline.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 mb-4">
+          <div class="card text-center p-4 mb-4">
+            <div class="icon-box"><i class="fas fa-chart-line"></i></div>
             <h5>Monitoring & Automation</h5>
             <p>Automated performance and alerting setup using Prometheus & Grafana.</p>
           </div>
@@ -141,18 +163,22 @@
 
   <section id="contact" class="section">
     <div class="container">
-      <h2 class="text-center">Contact</h2>
+      <h2 class="text-center mb-4">Contact</h2>
       <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank" onsubmit="return showThankYou()">
-        <div class="mb-3">
-          <input type="text" name="entry.123456" class="form-control" placeholder="Your Name" required>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="text" name="entry.123456" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <input type="email" name="entry.789012" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="col-12 mb-3">
+            <textarea name="entry.345678" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-info">Send Message</button>
+          </div>
         </div>
-        <div class="mb-3">
-          <input type="email" name="entry.789012" class="form-control" placeholder="Your Email" required>
-        </div>
-        <div class="mb-3">
-          <textarea name="entry.345678" class="form-control" rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-outline-info">Send Message</button>
       </form>
     </div>
   </section>
