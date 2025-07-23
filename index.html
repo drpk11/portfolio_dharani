@@ -10,49 +10,57 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://themewagon.github.io/personalportfolio/img/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #000;
       color: #fff;
     }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: -1;
+    .navbar, .footer {
+      background-color: #111;
     }
-    .navbar-brand, .nav-link, h1, h2, h3 { color: #14FFEC !important; }
+    .navbar-brand, .nav-link, h1, h2, h3 {
+      color: #FFA500 !important;
+    }
+    .btn-outline-info {
+      border-color: #FFA500;
+      color: #FFA500;
+    }
     .btn-outline-info:hover, .btn-info {
-      background-color: #00FFFF; color: #000;
+      background-color: #FFA500;
+      color: #000;
     }
     .section {
       padding: 100px 0;
-      background: rgba(0,0,0,0.75);
+      background-color: #111;
     }
     .profile-img {
       width: 180px;
       border-radius: 50%;
-      border: 4px solid #00FFFF;
+      border: 4px solid #FFA500;
     }
     .card {
-      background-color: rgba(0,0,0,0.6);
+      background-color: #1a1a1a;
       border: none;
       color: #fff;
       transition: transform 0.3s ease-in-out;
     }
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0,255,255,0.4);
+      box-shadow: 0 8px 16px rgba(255,165,0,0.4);
     }
     .progress-bar {
-      background-color: #00FFFF;
+      background-color: #FFA500;
     }
     .icon-box i {
       font-size: 2rem;
-      color: #00FFFF;
+      color: #FFA500;
       margin-bottom: 10px;
+    }
+    .footer {
+      background-color: #111;
+      color: #fff;
     }
   </style>
 </head>
+
 <body>
   <div class="overlay"></div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
